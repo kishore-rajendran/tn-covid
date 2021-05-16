@@ -11,7 +11,7 @@ function card({ hospital }) {
         .slice(1);
     const date = new Date(hospital[constants.LAST_UPDATED]);
     const formattedDate = date.getDate()
-        + '-' + date.getMonth()
+        + '-' + (date.getMonth() + 1)
         + '-' + date.getFullYear();
     let hospitalColor = constants.NORMAL_BEDS_CODE;
     if (hospital[constants.VENTILATOR_BEDS_VACANT] !== "0") {
