@@ -1,0 +1,114 @@
+@import '../../variable';
+
+.hospital {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 34% 10% 10% 7% 12% 15% 12%;
+    padding: 10px 10px 10px 15px;
+    border: 1px solid #e4e4e4;
+    text-align: center;
+    min-height: 70px;
+    border-radius: 2px;
+    background-color: #fff;
+    border-left: 10px solid;
+    font-size: .9em;
+
+    &--green {
+        border-left-color: $green;
+    }
+    &--orange {
+        border-left-color: $orange;
+    }
+    &--red {
+        border-left-color: $red;
+    }
+    &--black {
+        border-left-color: $black;
+    }
+    &:nth-child(odd) {
+        background-color: #f8f8f8;
+    }
+    &--no-beds {
+        opacity: .3;
+    }
+    &__header {
+        text-align: left;
+    }
+    &__last-updated,
+    &__beds--label {
+        display: none;
+    }
+    &__last-updated-row {
+        font-size: .9em;
+        margin-left: 10px;
+    }
+    &__contact {
+        display: none;
+        font-size: 12px;
+        font-weight: 400;
+        color: $slate;
+    }
+    &__address {
+        font-size: 12px;
+        font-weight: 400;
+        color: $slate;
+    }
+    &__contact-row {
+        font-size: .9em;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .hospital {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        flex-direction: column;
+        border-radius: 7px;
+        box-shadow: 5px 5px 8px $shadow;
+        min-height: 127px;
+        padding: 20px;
+        border-left-width: 20px;
+        
+        &__header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+        &__name {
+            color: $dark-blue;
+            font-size: 15px;
+            font-weight: 500;
+        }
+        &__contact {
+            display: block;
+        }
+        &__beds--label {
+            display: inline-block;
+            font-size: 13px;
+            font-weight: 400;
+        }
+        &__beds {
+            width: 50%;
+            display: flex;
+            justify-content: space-between;
+        }
+        &__last-updated-row {
+            display: none;
+        }
+        &__last-updated {
+            display: inline-block;
+            min-width: 50px;
+            font-size: 12px;
+            font-weight: 400;
+            color: $slate;
+            margin-left: 10px;
+            padding-top: 3px;
+        }
+        &__contact-row {
+            display: none;
+        }
+    }
+}

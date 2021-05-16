@@ -1,0 +1,47 @@
+@import "../../variable";
+
+.nav-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+    padding: 20px 50px;
+    background: $dark-blue;
+    z-index: 50;
+    
+    &__logo {
+        color: #fff;
+        font-size: 20px;
+        font-weight: 500;
+        letter-spacing: 2px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .nav-bar {
+        position: sticky;
+        top: 0;
+    }
+}
+@media only screen and (max-width: 480px) {
+    .nav-bar {
+        padding: 15px 10px;
+    }
+}
+@media only screen and (max-width: 400px) {
+    .react-select {
+        min-width: 120px;
+        font-size: 10px;
+
+        &__control {
+            min-height: 30px !important;
+        }
+        &__value-container {
+            height: 25px;
+            padding: 0 3px !important;
+        }
+        &__indicator {
+            padding: 0 3px !important;
+        }
+    }
+}
