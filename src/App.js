@@ -16,6 +16,9 @@ function App() {
   const tableHeaders = ['Name', 'Normal', 'Oxygen', 'ICU', 'Ventilator', "contact", "updated"];
   const filterOptions = [
     {
+      label: 'All',
+      value: 'All'
+    }, {
       label: 'Normal',
       value: constants.NORMAL_BEDS_VACANT
     }, {
@@ -59,7 +62,7 @@ function App() {
       stateBedAvailability
         .filter((hospital) => {
           let district = (!selectedDistrict || hospital[constants.DISTRICT_NAME] === selectedDistrict.value)
-          return district && (!filterBy || !(hospital[filterBy.value] === "0"));
+          return district && (!filterBy || filterBy.value === 'All' || !(hospital[filterBy.value] === "0"));
         })
         .sort((a, b) => parseInt(b[constants.TOTAL_BEDS_VACANT]) - parseInt(a[constants.TOTAL_BEDS_VACANT]))
     );
