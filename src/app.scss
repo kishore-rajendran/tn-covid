@@ -40,9 +40,15 @@
 .scroll-to-top {
     position: fixed;
     z-index: 1000;
-    bottom: 15px;
+    bottom: 0;
     right: clamp(20px, 5%, 80px);
     cursor: pointer;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    -webkit-tap-highlight-color: transparent;
 
     &__img {
         fill: $slate;
@@ -68,5 +74,8 @@
     }
     .btn {
         font-size: 12px;
+    }
+    .scroll-to-top {
+        right: 12px;
     }
 }

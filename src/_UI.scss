@@ -59,3 +59,12 @@
     left: 50%;
     bottom: 100%;
 }
+
+@media only screen and (max-width: 768px) {
+    [tooltip]:hover:after {
+        content: none;
+    }
+    [tooltip]:not(.fa):hover:before {
+        content: none;
+    }
+}
