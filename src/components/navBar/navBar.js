@@ -14,7 +14,14 @@ function navBar(props) {
                         className="react-select"
                         classNamePrefix="react-select"
                         value={props.selectedDistrict}
-                        onChange={selectedOption => props.setSelectedDistrict(selectedOption)}
+                        onChange={selectedOption => {
+                            window.scrollTo({
+                                top: 0,
+                                left: 0,
+                                behavior: 'smooth'
+                            });
+                            props.setSelectedDistrict(selectedOption)
+                        }}
                         options={props.districtOptions}
                         placeholder="Select District"
                     />

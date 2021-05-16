@@ -1,4 +1,5 @@
 @import "./variable";
+@import "./UI";
 
 .content {
     width: 80%;
@@ -26,8 +27,8 @@
 .empty {
     text-align: center;
     &__img {
-        width: 50%;
-        height: auto;
+        width: 30%;
+        height: fit-content;
         margin: 10% 0;
     }
 }
@@ -35,82 +36,19 @@
     width: 120px;
     margin: 5px 0;
 }
-.btn {
-    min-width: 80px;
-    padding: 5px 10px;
-    font-size: 15px;
-    font-weight: 600;
-    background: #fff;
-    border: 1px solid #e4e4e4;
-    border-radius: 5px;
-    transition: all 0.25s ease;
+
+.scroll-to-top {
+    position: fixed;
+    z-index: 1000;
+    bottom: 15px;
+    right: clamp(20px, 5%, 80px);
     cursor: pointer;
 
-    &:hover {
-        transform: translateY(-1px);
-    }
-    &--green {
-        color: $green;
-
-        &.active {
-            color: #fff;
-            background: $green;
-        }
-    }
-    &--orange {
-        color: $orange;
-
-        &.active {
-            color: #fff;
-            background: $orange;
-        }
-    }
-    &--red {
-        color: $red;
-
-        &.active {
-            color: #fff;
-            background: $red;
-        }
-    }
-    &--black {
-        color: $black;
-
-        &.active {
-            color: #fff;
-            background: $black;
-        }
+    &__img {
+        fill: $slate;
     }
 }
-.react-select {
-    min-width: 160px;
-    font-size: 13px;
-    z-index: 20;
 
-    &__control {
-        min-height: 30px !important;
-    }
-    &__value-container {
-        height: 25px;
-        padding: 0 8px !important;
-    }
-    &__indicator {
-        padding: 0 8px !important;
-    }
-    &__menu-list {
-        &::-webkit-scrollbar-track {
-            background: #f5f5f5;
-        }
-        &::-webkit-scrollbar-thumb {
-            background-color: #b3b3b3;
-            border: 1px solid #f3f3f3;
-            border-radius: 1px;
-        }
-        &::-webkit-scrollbar {
-            width: 5px;
-        }
-    }
-}
 @media only screen and (max-width: 768px) {
     .content {
         display: grid;

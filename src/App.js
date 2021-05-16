@@ -3,6 +3,7 @@ import Papa from "papaparse";
 import Card from './components/card/card';
 import './app.scss';
 import { ReactComponent as NoData } from './assets/svg/no-data.svg';
+import { ReactComponent as ScrollToTop } from './assets/svg/scroll-to-top.svg';
 import NavBar from './components/navBar/navBar';
 import Select from 'react-select';
 import * as constants from './constants';
@@ -82,7 +83,14 @@ function App() {
             classNamePrefix="react-select"
             options={filterOptions}
             value={filterBy}
-            onChange={option => setFilterBy(option)}
+            onChange={option => {
+              window.scrollTo({
+                top: 0,
+                left: 0,
+                behavior: 'smooth'
+              });
+              setFilterBy(option);
+            }}
           />
         </div>
         <div className="content__header-container">
@@ -107,6 +115,22 @@ function App() {
           </div>
         }
       </section>
+      <div
+        className="scroll-to-top"
+        onClick={() => {
+          window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: 'smooth'
+          });
+        }}
+      >
+        <div tooltip="Scroll to Top">
+          <ScrollToTop
+            className="scroll-to-top__img"
+          />
+        </div>
+      </div>
     </div>
   );
 }
