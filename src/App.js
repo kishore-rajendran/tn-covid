@@ -83,6 +83,7 @@ function App() {
             classNamePrefix="react-select"
             options={filterOptions}
             value={filterBy}
+            placeholder="select bed type"
             onChange={option => {
               window.scrollTo({
                 top: 0,

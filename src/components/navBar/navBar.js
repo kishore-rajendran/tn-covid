@@ -23,7 +23,7 @@ function navBar(props) {
                             props.setSelectedDistrict(selectedOption)
                         }}
                         options={props.districtOptions}
-                        placeholder="Select District"
+                        placeholder="select district"
                     />
                 </div>
             </div>
